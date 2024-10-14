@@ -15,12 +15,15 @@ class Auth : public QDialog
 public:
     explicit Auth(QWidget *parent = nullptr);
     static bool isAuthorized();
+    static QString loadToken();
     ~Auth();
 
 private slots:
     void on_enterButton_clicked();
     void onReplyFinished();
 
+private :
+    void saveToken(const QString& token);
 private:
     Ui::Auth *ui;
     QNetworkAccessManager *networkManager;
