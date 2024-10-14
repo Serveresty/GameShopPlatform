@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-69a7a62d805a4676cf0c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "GameShopPlatform",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "GameShopPlatform::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-GameShopPlatform-Debug-d725acfae46de22901d2.json",
+					"name" : "GameShopPlatform",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "GameShopPlatform_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-GameShopPlatform_autogen-Debug-531148e93024c21dae2e.json",
+					"name" : "GameShopPlatform_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "GameShopPlatform_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-GameShopPlatform_autogen_timestamp_deps-Debug-53e8471e4adefd508b94.json",
+					"name" : "GameShopPlatform_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "E:/cppProj/GameShopPlatform/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug",
+		"source" : "E:/cppProj/GameShopPlatform"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
