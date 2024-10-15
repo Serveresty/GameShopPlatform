@@ -759,6 +759,6 @@ E:/cppProj/GameShopPlatform/mainwindow.h
  mdp:E:/cppProj/GameShopPlatform/mainwindow.h
 E:/cppProj/GameShopPlatform/auth.cpp
  uic:ui_auth.h
-E:/cppProj/GameShopPlatform/main.cpp
 E:/cppProj/GameShopPlatform/mainwindow.cpp
  uic:./ui_mainwindow.h
+E:/cppProj/GameShopPlatform/main.cpp

@@ -43,8 +43,9 @@ void Auth::on_enterButton_clicked()
     QString login = ui->emailEdit->text();
     QString password = ui->passEdit->text();
 
-    QUrl url("localhost:8080");
+    QUrl url("http://localhost:8080/auth/sign-in");
     QNetworkRequest request(url);
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
 
     QUrlQuery postData;
     postData.addQueryItem("username", login);
