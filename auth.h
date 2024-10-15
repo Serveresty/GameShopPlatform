@@ -18,14 +18,17 @@ public:
     static QString loadToken();
     ~Auth();
 
-// private slots:
-//     void on_enterButton_clicked();
-//     void onReplyFinished();
+private slots:
+    void switchToRegisterForm();
+    void switchToLoginForm();
 
 private :
     void saveToken(const QString& token);
     void on_enterButton_clicked();
     void onReplyFinished();
+    void on_enterRegButton_clicked();
+    void onReplyFinished2();
+    bool isPasssEqual(QString pass, QString confpass);
 private:
     Ui::Auth *ui;
     QNetworkAccessManager *networkManager;
