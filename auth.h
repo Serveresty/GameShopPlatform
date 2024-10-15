@@ -18,12 +18,14 @@ public:
     static QString loadToken();
     ~Auth();
 
-private slots:
-    void on_enterButton_clicked();
-    void onReplyFinished();
+// private slots:
+//     void on_enterButton_clicked();
+//     void onReplyFinished();
 
 private :
     void saveToken(const QString& token);
+    void on_enterButton_clicked();
+    void onReplyFinished();
 private:
     Ui::Auth *ui;
     QNetworkAccessManager *networkManager;

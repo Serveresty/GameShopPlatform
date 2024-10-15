@@ -1,5 +1,6 @@
 #include "auth.h"
 #include "ui_auth.h"
+#include "mainwindow.h"
 #include <QNetworkAccessManager>
 #include <QNetworkRequest>
 #include <QNetworkReply>
@@ -40,6 +41,7 @@ QString Auth::loadToken() {
 
 void Auth::on_enterButton_clicked()
 {
+    ui->enterButton->setEnabled(false);
     QString login = ui->emailEdit->text();
     QString password = ui->passEdit->text();
 
@@ -47,11 +49,14 @@ void Auth::on_enterButton_clicked()
     QNetworkRequest request(url);
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
 
-    QUrlQuery postData;
-    postData.addQueryItem("username", login);
-    postData.addQueryItem("password", password);
+    QJsonObject jsonData;
+    jsonData["email"] = login;
+    jsonData["password"] = password;
 
-    QNetworkReply *reply = networkManager->post(request, postData.toString(QUrl::FullyEncoded).toUtf8());
+    QJsonDocument jsonDoc(jsonData);
+    QByteArray json = jsonDoc.toJson();
+
+    QNetworkReply *reply = networkManager->post(request, json);
 
     connect(reply, &QNetworkReply::finished, this, &Auth::onReplyFinished);
 }
@@ -67,6 +72,11 @@ void Auth::onReplyFinished() {
             QString token = jsonObject["token"].toString();
 
             saveToken(token);
+
+            this->close();
+
+            MainWindow *mainWindow = new MainWindow();
+            mainWindow->show();
         }
     } else {
         qDebug() << "Error:" << reply->errorString();
